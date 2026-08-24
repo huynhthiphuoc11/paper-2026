@@ -1,0 +1,74 @@
+{
+  "phase": 0,
+  "status": "FREEZE_COMPLETE",
+  "random_seed": 42,
+  "data_files": {
+    "job_path": "data/JOB_DATA_FINAL.csv",
+    "user_path": "data/USER_DATA_FINAL.csv"
+  },
+  "dataset_statistics": {
+    "total_raw_jobs": 14634,
+    "total_raw_candidates": 3983,
+    "sampled_jobs": 80,
+    "sampled_candidates": 120,
+    "total_pairs_constructed": 5600,
+    "split_counts": {
+      "train": {
+        "n_pairs": 4480,
+        "n_jobs": 64,
+        "ratio": 0.80
+      },
+      "dev": {
+        "n_pairs": 280,
+        "n_jobs": 4,
+        "ratio": 0.05
+      },
+      "test": {
+        "n_pairs": 840,
+        "n_jobs": 12,
+        "ratio": 0.15
+      }
+    }
+  },
+  "features": [
+    "loc_match",
+    "skill_iou",
+    "exp_score",
+    "role_match",
+    "desc_sem_sim"
+  ],
+  "current_labels": {
+    "heuristic_score": "0.30 * loc_match + 0.25 * skill_iou + 0.20 * exp_score + 0.15 * role_match + 0.10 * desc_sem_sim",
+    "heuristic_label": "1 if heuristic_score >= 0.45 else 0",
+    "composite_quality": "0.35 * skill_iou + 0.35 * desc_sem_sim + 0.15 * exp_score + 0.15 * role_match",
+    "gold_relevance": "2 if (composite_quality >= 0.40 and loc_match > 0) else (1 if composite_quality >= 0.25 else 0)",
+    "gold_label_binary": "1 if gold_relevance >= 1 else 0"
+  },
+  "models_evaluated": [
+    "H (Heuristic)",
+    "A (Baseline BCE)",
+    "B (Learned BCE)",
+    "B+ (Soft BCE)",
+    "C (Fixed RankNet)",
+    "D (Main RankNet)",
+    "D+ (Proposed Soft-RankNet)"
+  ],
+  "table_1_independent_gold_baseline_results": {
+    "H (Heuristic)": {"nDCG@5": 0.886662, "nDCG@10": 0.821064, "MAP@10": 0.192772, "MRR": 0.933333},
+    "A (Baseline BCE)": {"nDCG@5": 0.886662, "nDCG@10": 0.821064, "MAP@10": 0.192772, "MRR": 0.933333},
+    "B (Learned BCE)": {"nDCG@5": 0.860358, "nDCG@10": 0.806329, "MAP@10": 0.183942, "MRR": 0.933333},
+    "B+ (Soft BCE)": {"nDCG@5": 1.000000, "nDCG@10": 0.988912, "MAP@10": 0.310537, "MRR": 1.000000},
+    "C (Fixed RankNet)": {"nDCG@5": 0.076937, "nDCG@10": 0.118030, "MAP@10": 0.012208, "MRR": 0.121873},
+    "D (Main RankNet)": {"nDCG@5": 0.057146, "nDCG@10": 0.191942, "MAP@10": 0.019752, "MRR": 0.126967},
+    "D+ (Proposed Soft-RankNet)": {"nDCG@5": 1.000000, "nDCG@10": 0.988912, "MAP@10": 0.310240, "MRR": 1.000000}
+  },
+  "table_2_heuristic_test_circular_results": {
+    "H (Heuristic)": {"nDCG@5": 1.000000, "nDCG@10": 1.000000, "MAP@10": 0.0, "MRR": 0.0},
+    "A (Baseline BCE)": {"nDCG@5": 1.000000, "nDCG@10": 1.000000, "MAP@10": 0.0, "MRR": 0.0},
+    "B (Learned BCE)": {"nDCG@5": 0.993369, "nDCG@10": 0.993391, "MAP@10": 0.0, "MRR": 0.0},
+    "B+ (Soft BCE)": {"nDCG@5": 0.590105, "nDCG@10": 0.589700, "MAP@10": 0.0, "MRR": 0.0},
+    "C (Fixed RankNet)": {"nDCG@5": 0.329628, "nDCG@10": 0.345222, "MAP@10": 0.0, "MRR": 0.0},
+    "D (Main RankNet)": {"nDCG@5": 0.906385, "nDCG@10": 0.918584, "MAP@10": 0.0, "MRR": 0.0},
+    "D+ (Proposed Soft-RankNet)": {"nDCG@5": 0.470622, "nDCG@10": 0.485949, "MAP@10": 0.0, "MRR": 0.0}
+  }
+}

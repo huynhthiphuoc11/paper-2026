@@ -1,0 +1,159 @@
+{
+  "joint_coverage": {
+    "distribution": [
+      {
+        "n_active_lfs": 0,
+        "fraction": 0.0,
+        "count": 0,
+        "note": "No supervision — excluded from Label Model"
+      },
+      {
+        "n_active_lfs": 1,
+        "fraction": 0.0,
+        "count": 0,
+        "note": "Single LF only — degenerates to copying that LF"
+      },
+      {
+        "n_active_lfs": 2,
+        "fraction": 0.0688,
+        "count": 308,
+        "note": "Minimal multi-source (sufficient but thin)"
+      },
+      {
+        "n_active_lfs": 3,
+        "fraction": 0.3114,
+        "count": 1395,
+        "note": "Moderate multi-source"
+      },
+      {
+        "n_active_lfs": 4,
+        "fraction": 0.4411,
+        "count": 1976,
+        "note": "Good multi-source"
+      },
+      {
+        "n_active_lfs": 5,
+        "fraction": 0.1788,
+        "count": 801,
+        "note": "Full coverage (all LFs active)"
+      }
+    ],
+    "pct_zero_active": 0.0,
+    "pct_one_active": 0.0,
+    "pct_ge2_active": 1.0,
+    "co_abstain_rates": {
+      "lf_skill+lf_sem": 0.2493,
+      "lf_skill+lf_exp": 0.0,
+      "lf_skill+lf_role": 0.1319,
+      "lf_skill+lf_loc": 0.0,
+      "lf_sem+lf_exp": 0.0,
+      "lf_sem+lf_role": 0.1364,
+      "lf_sem+lf_loc": 0.0,
+      "lf_exp+lf_role": 0.0,
+      "lf_exp+lf_loc": 0.0,
+      "lf_role+lf_loc": 0.0
+    },
+    "interpretation": "100.0% of pairs have >=2 active LFs and can be used as multi-source weak supervision. The remaining pairs either have no supervision signal or degenerate to a single LF."
+  },
+  "lf_exp_diagnosis": {
+    "current_pos_rate": 0.9364,
+    "current_neg_rate": 0.0636,
+    "current_abs_rate": 0.0,
+    "current_thresholds": {
+      "exp_pos": 1.0,
+      "exp_neg": 0.5
+    },
+    "recommended_thresholds": {
+      "exp_pos": 1.0,
+      "exp_neg": 0.3
+    },
+    "diagnosis": "lf_exp has pos_rate=93.6% because exp_pos=1.00 triggers for all pairs where exp_score>=1.0, and 93.6% of pairs satisfy this. The exp_neg=0.50 threshold only captures exp_score<=0.50 (~6.4%). Zero ABSTAIN zone means lf_exp never withholds judgment, distorting the EM prior toward P(Y=1)~0.93."
+  },
+  "lf_loc_diagnosis": {
+    "current_pos_rate": 0.2594,
+    "current_neg_rate": 0.7406,
+    "current_abs_rate": 0.0,
+    "design_flaw": "Binary loc_match (0/1) → no ABSTAIN by construction",
+    "diagnosis": "lf_loc has 100% coverage because loc_match is binary (0 or 1) and the LF rule has no ABSTAIN branch. 74% negative rate may reflect genuine location mismatch in the dataset, OR may be an artifact of overly strict location parsing that treats missing/remote/flexible location as mismatch (0.0).",
+    "recommended_fix": "Add ABSTAIN branch: set lf_loc=0 when job is remote/national, or when candidate/job location field is empty/ambiguous. This requires a remote_job flag or keyword check in the job title/description."
+  },
+  "abstain_independence": {
+    "lf_skill+lf_sem": {
+      "observed": 0.2493,
+      "expected_if_independent": 0.2499,
+      "ratio": 0.998,
+      "interpretation": "Near-independent ABSTAIN"
+    },
+    "lf_skill+lf_exp": {
+      "observed": 0.0,
+      "expected_if_independent": 0.0,
+      "ratio": Infinity,
+      "interpretation": "Co-abstain more than expected (dependent ABSTAIN)"
+    },
+    "lf_skill+lf_role": {
+      "observed": 0.1319,
+      "expected_if_independent": 0.1352,
+      "ratio": 0.976,
+      "interpretation": "Near-independent ABSTAIN"
+    },
+    "lf_skill+lf_loc": {
+      "observed": 0.0,
+      "expected_if_independent": 0.0,
+      "ratio": Infinity,
+      "interpretation": "Co-abstain more than expected (dependent ABSTAIN)"
+    },
+    "lf_sem+lf_exp": {
+      "observed": 0.0,
+      "expected_if_independent": 0.0,
+      "ratio": Infinity,
+      "interpretation": "Co-abstain more than expected (dependent ABSTAIN)"
+    },
+    "lf_sem+lf_role": {
+      "observed": 0.1364,
+      "expected_if_independent": 0.1351,
+      "ratio": 1.01,
+      "interpretation": "Near-independent ABSTAIN"
+    },
+    "lf_sem+lf_loc": {
+      "observed": 0.0,
+      "expected_if_independent": 0.0,
+      "ratio": Infinity,
+      "interpretation": "Co-abstain more than expected (dependent ABSTAIN)"
+    },
+    "lf_exp+lf_role": {
+      "observed": 0.0,
+      "expected_if_independent": 0.0,
+      "ratio": Infinity,
+      "interpretation": "Co-abstain more than expected (dependent ABSTAIN)"
+    },
+    "lf_exp+lf_loc": {
+      "observed": 0.0,
+      "expected_if_independent": 0.0,
+      "ratio": Infinity,
+      "interpretation": "Co-abstain more than expected (dependent ABSTAIN)"
+    },
+    "lf_role+lf_loc": {
+      "observed": 0.0,
+      "expected_if_independent": 0.0,
+      "ratio": Infinity,
+      "interpretation": "Co-abstain more than expected (dependent ABSTAIN)"
+    }
+  },
+  "simulated_fix": {
+    "current": {
+      "pos": 4195,
+      "neg": 285,
+      "abs": 0
+    },
+    "estimated_post_fix": {
+      "pos": 4195,
+      "neg": 171,
+      "abs": 114
+    },
+    "gap_threshold_years": {
+      "current": 1.73,
+      "new": 3.01
+    },
+    "note": "Approximate simulation. Exact results require re-running lf_definitions with new threshold."
+  }
+}

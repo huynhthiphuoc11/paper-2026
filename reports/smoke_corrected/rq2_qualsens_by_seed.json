@@ -1,0 +1,32 @@
+{
+  "42": {
+    "M1": {
+      "skill": {
+        "QualSens": 0.03,
+        "n": 100
+      },
+      "exp": {
+        "QualSens": 0.84,
+        "n": 100
+      },
+      "domain": {
+        "QualSens": 0.69,
+        "n": 100
+      }
+    },
+    "M2": {
+      "skill": {
+        "QualSens": 0.03,
+        "n": 100
+      },
+      "exp": {
+        "QualSens": 1.0,
+        "n": 100
+      },
+      "domain": {
+        "QualSens": 0.7,
+        "n": 100
+      }
+    }
+  }
+}

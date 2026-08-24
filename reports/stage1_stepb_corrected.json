@@ -1,0 +1,29 @@
+{
+  "step_b_corrected": {
+    "n_ge3_active": 2777,
+    "pct_ge3_active": 0.6199,
+    "n_skill_sem_role_all_active": 801,
+    "pct_skill_sem_role_all_active": 0.1788,
+    "n_4_active": 801,
+    "pct_4_active": 0.1788
+  },
+  "lfloc_gating_bucket": {
+    "gating_bucket_1soft_pos": {
+      "n": 1975,
+      "pct": 0.4408
+    },
+    "gating_bucket_2soft_pos": {
+      "n": 516,
+      "pct": 0.1152
+    },
+    "gating_bucket_all_soft_pos": {
+      "n": 61,
+      "pct": 0.0136
+    },
+    "annotation_target": "~40-50 pairs sampled from lf_loc=-1 & >=1 soft_pos",
+    "decision_criteria": {
+      "if_mostly_relevant": "lf_loc is soft evidence -> keep in Label Model",
+      "if_mostly_irrelevant": "lf_loc is hard gate -> remove from LM, use as RankNet feature"
+    }
+  }
+}

@@ -1,0 +1,157 @@
+{
+  "protocol_version": "paper-2026-08-23",
+  "seed": 42,
+  "seeds": [
+    11,
+    23,
+    42,
+    67,
+    89
+  ],
+  "data_dir": "data",
+  "output_dir": "results",
+  "sample": {
+    "n_jobs": 160,
+    "n_candidates": 240,
+    "candidates_per_job": 100
+  },
+  "split": {
+    "seed": 42,
+    "train_ratio": 0.7,
+    "validation_ratio": 0.15
+  },
+  "features": {
+    "columns": [
+      "loc_match",
+      "skill_iou",
+      "exp_score",
+      "role_match",
+      "desc_sem_sim"
+    ],
+    "role_tfidf_max_features": 2000,
+    "description_tfidf_max_features": 5000,
+    "high_df_skill_threshold": null
+  },
+  "weak_supervision": {
+    "pos_percentile": 75,
+    "neg_percentile": 25,
+    "aggregator": "dawid_skene",
+    "lf_columns": [
+      "lf_skill",
+      "lf_sem",
+      "lf_exp",
+      "lf_role",
+      "lf_loc"
+    ]
+  },
+  "pairing": {
+    "score_column": "y_prob",
+    "pair_delta": 0.02,
+    "max_pairs_per_job": 150
+  },
+  "models": {
+    "B1": {
+      "c_grid": [
+        0.1,
+        1.0,
+        10.0
+      ]
+    },
+    "B2": {
+      "learning_rate_grid": [
+        0.001,
+        0.01
+      ],
+      "batch_size_grid": [
+        128,
+        256
+      ],
+      "max_epochs": 200,
+      "patience": 15
+    },
+    "ranknet": {
+      "architecture": [
+        5,
+        32,
+        16,
+        1
+      ],
+      "dropout": 0.1,
+      "learning_rate_grid": [
+        0.0005,
+        0.001
+      ],
+      "batch_size_grid": [
+        128,
+        256
+      ],
+      "max_epochs": 100,
+      "patience": 12
+    },
+    "M2": {
+      "lambda_grid": [
+        0.05,
+        0.1,
+        0.2
+      ]
+    }
+  },
+  "gold": {
+    "path": "data/gold/human_validated_benchmark_graded_0_3.csv",
+    "relevance_column": "relevance",
+    "grade_scale": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "binary_relevance_threshold": 2,
+    "k_values": [
+      5,
+      10
+    ]
+  },
+  "perturbation": {
+    "kinds": [
+      "skill",
+      "exp",
+      "domain"
+    ],
+    "skill_drop": 0.35,
+    "exp_drop": 0.4,
+    "domain_role_cap": 0.15
+  },
+  "bootstrap": {
+    "n_resamples": 5000,
+    "seed": 42,
+    "alpha": 0.05
+  },
+  "smoke": {
+    "seeds": [
+      42
+    ],
+    "B1_c_grid": [
+      1.0
+    ],
+    "B2_learning_rate_grid": [
+      0.01
+    ],
+    "B2_batch_size_grid": [
+      256
+    ],
+    "ranknet_learning_rate_grid": [
+      0.001
+    ],
+    "ranknet_batch_size_grid": [
+      256
+    ],
+    "lambda_grid": [
+      0.1
+    ],
+    "B2_max_epochs": 8,
+    "ranknet_max_epochs": 8,
+    "patience": 3,
+    "bootstrap_resamples": 200
+  },
+  "run_mode": "full"
+}

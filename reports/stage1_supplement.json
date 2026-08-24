@@ -1,0 +1,128 @@
+{
+  "step_a_expected_conflict": {
+    "expected_vs_observed_conflict": [
+      {
+        "pair": "lf_skill<->lf_sem",
+        "n_both_active": 1118,
+        "observed_conflict": 0.4875,
+        "expected_conflict_under_independence": 0.5001,
+        "diff_obs_minus_exp": -0.0127,
+        "cramers_v": 0.0,
+        "conclusion": "Conflict explained by base rates — NOT genuine divergence",
+        "marginals": {
+          "lf_skill": {
+            "pos": 0.5081,
+            "neg": 0.4919
+          },
+          "lf_sem": {
+            "pos": 0.4911,
+            "neg": 0.5089
+          }
+        }
+      },
+      {
+        "pair": "lf_skill<->lf_role",
+        "n_both_active": 1620,
+        "observed_conflict": 0.4988,
+        "expected_conflict_under_independence": 0.4967,
+        "diff_obs_minus_exp": 0.0021,
+        "cramers_v": 0.01,
+        "conclusion": "Conflict explained by base rates — NOT genuine divergence",
+        "marginals": {
+          "lf_skill": {
+            "pos": 0.4889,
+            "neg": 0.5111
+          },
+          "lf_role": {
+            "pos": 0.3519,
+            "neg": 0.6481
+          }
+        }
+      },
+      {
+        "pair": "lf_skill<->lf_loc",
+        "n_both_active": 2240,
+        "observed_conflict": 0.5054,
+        "expected_conflict_under_independence": 0.5,
+        "diff_obs_minus_exp": 0.0054,
+        "cramers_v": 0.0,
+        "conclusion": "Conflict explained by base rates — NOT genuine divergence",
+        "marginals": {
+          "lf_skill": {
+            "pos": 0.5,
+            "neg": 0.5
+          },
+          "lf_loc": {
+            "pos": 0.258,
+            "neg": 0.742
+          }
+        }
+      },
+      {
+        "pair": "lf_sem<->lf_role",
+        "n_both_active": 1641,
+        "observed_conflict": 0.4808,
+        "expected_conflict_under_independence": 0.5018,
+        "diff_obs_minus_exp": -0.021,
+        "cramers_v": 0.058,
+        "conclusion": "Weak residual after base-rate correction",
+        "marginals": {
+          "lf_sem": {
+            "pos": 0.5046,
+            "neg": 0.4954
+          },
+          "lf_role": {
+            "pos": 0.298,
+            "neg": 0.702
+          }
+        }
+      },
+      {
+        "pair": "lf_sem<->lf_loc",
+        "n_both_active": 2241,
+        "observed_conflict": 0.5252,
+        "expected_conflict_under_independence": 0.4999,
+        "diff_obs_minus_exp": 0.0253,
+        "cramers_v": 0.035,
+        "conclusion": "Weak residual after base-rate correction",
+        "marginals": {
+          "lf_sem": {
+            "pos": 0.4998,
+            "neg": 0.5002
+          },
+          "lf_loc": {
+            "pos": 0.2575,
+            "neg": 0.7425
+          }
+        }
+      },
+      {
+        "pair": "lf_role<->lf_loc",
+        "n_both_active": 3269,
+        "observed_conflict": 0.4384,
+        "expected_conflict_under_independence": 0.4243,
+        "diff_obs_minus_exp": 0.0141,
+        "cramers_v": 0.02,
+        "conclusion": "Conflict explained by base rates — NOT genuine divergence",
+        "marginals": {
+          "lf_role": {
+            "pos": 0.3432,
+            "neg": 0.6568
+          },
+          "lf_loc": {
+            "pos": 0.2585,
+            "neg": 0.7415
+          }
+        }
+      }
+    ]
+  },
+  "step_b_two_active_breakdown": {
+    "n_pairs_2_active": 1395,
+    "n_with_loc_as_one": 1395,
+    "pct_with_loc": 1.0,
+    "n_without_loc": 0,
+    "pct_without_loc": 0.0
+  },
+  "step_c_corrected_wording": "See console output above"
+}

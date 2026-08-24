@@ -1,0 +1,36 @@
+{
+  "protocol_version": "paper-2026-08-23",
+  "run_mode": "full",
+  "dataset_files": {
+    "jobs": "881b6725bf79cc44441225443cd33580bd3726281b09a8d7a8dd86622bfbc69a",
+    "candidates": "e620c5a0c577af130f0a918bf40dfc4360c693bd8e95e8f44cc50107a92a235c",
+    "graded_evaluation": "2d362ad6328c1643ef307033cde8e3645dace467789f7b240495aacf0adcfd1f"
+  },
+  "source_files": {
+    "src\\data\\feature_pipeline.py": "87feaa0a8bba9741ce62316e0b9f2363afdd324ae06816ceba2106d6ae6bf985",
+    "src\\weak\\aggregator.py": "a6ae0c32ea93cd8d648d9c6dedb1428c9c1ec2ae0037eb0e4317e9e6575b5b77",
+    "src\\weak\\lf.py": "eefab0c61d8c960138373d872b78cfdb170dea0c372cc541698e027fe2ae64fc",
+    "src\\models\\pairing.py": "9ca815829c33deba90cb333396205b5c4580b3bf90edd353b096f6078967251f",
+    "src\\models\\training.py": "ea291add2e1a74ab60e4185e4fcbae0b0badb9d802993452be0fc1ca86254194",
+    "src\\eval\\metrics.py": "02946c760f3dba49d81acc2aa0dbb1f80cc1fa3c181724cb23c883735341de21",
+    "scripts\\run_paper_experiment.py": "0279c07dcc0b51126a66d894c322c576932d9b4ae53c7bf66f01d0d220a47114"
+  },
+  "environment": {
+    "python": "3.11.9",
+    "platform": "Windows-10-10.0.26200-SP0",
+    "numpy": "2.2.6",
+    "pandas": "2.3.3",
+    "scikit_learn": "1.7.2",
+    "torch": "2.9.1+cpu"
+  },
+  "counts": {
+    "sampled_jobs": 160,
+    "sampled_candidates": 240,
+    "sampled_pairs": 16000,
+    "train_pairs": 11200,
+    "validation_pairs": 2400,
+    "test_pairs": 2400,
+    "graded_pairs": 100,
+    "graded_jobs": 12
+  }
+}

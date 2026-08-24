@@ -1,0 +1,29 @@
+{
+  "root": "D:\\NCKH\\paper-2026",
+  "feature_cols": [
+    "loc_match",
+    "skill_iou",
+    "exp_score",
+    "role_match",
+    "desc_sem_sim"
+  ],
+  "source_fingerprints": {
+    "src.data.loader": {
+      "path": "D:\\NCKH\\paper-2026\\src\\data\\loader.py",
+      "sha256_12": "1ac5a42c9ffe"
+    },
+    "src.weak.aggregator": {
+      "path": "D:\\NCKH\\paper-2026\\src\\weak\\aggregator.py",
+      "sha256_12": "a6ae0c32ea93"
+    },
+    "src.models.skill_gap": {
+      "path": "D:\\NCKH\\paper-2026\\src\\models\\skill_gap.py",
+      "sha256_12": "b2411bb424a7"
+    }
+  },
+  "skill_parser_probe": [
+    "java",
+    "python",
+    "sql"
+  ]
+}

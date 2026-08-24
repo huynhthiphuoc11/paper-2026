@@ -1,0 +1,14 @@
+{
+  "phase": 3,
+  "status": "BALANCED_AUTHOR_BENCHMARK_COMPLETE",
+  "external_api_cost": "$0 (No LLM API calls used)",
+  "annotation_method": "Author-Annotated Benchmark by Explicit Qualitative Rubric",
+  "n_pairs_annotated": 100,
+  "n_jobs_covered": 12,
+  "class_distribution": {
+    "Label 0 (Irrelevant)": 30,
+    "Label 1 (Partially Relevant)": 35,
+    "Label 2 (Highly Relevant)": 35
+  },
+  "honest_limitation_statement": "The benchmark was manually annotated by one author using a predefined qualitative relevance rubric. Since no professional recruiter was available, the benchmark is referred to as an author-annotated benchmark rather than an expert-validated ground truth."
+}
