@@ -1,4 +1,0 @@
-seed,split,n_rows,n_jobs,n_unique_scores,median_unique_scores_per_job,tie_pair_rate
-42,train,3780,54,80,16.5,0.13607852158576797
-42,validation,700,10,42,14.0,0.1397929606625259
-42,graded_eval,100,12,39,6.5,0.09280742459396751
