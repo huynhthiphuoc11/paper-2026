@@ -1,0 +1,18 @@
+{
+  "protocol_version": "three-signal-2026-08-24",
+  "mode": "smoke",
+  "stage": "complete",
+  "selected_formulation": "pointwise",
+  "selected_posterior_threshold": 0.3,
+  "conclusion": "NOT SUPPORTED: the nDCG@5 confidence interval contains or touches zero.",
+  "counts": {
+    "gold_validation_jobs": 4,
+    "gold_test_jobs": 8,
+    "seeds": 1
+  },
+  "input_hashes": {
+    "jobs": "881b6725bf79cc44441225443cd33580bd3726281b09a8d7a8dd86622bfbc69a",
+    "candidates": "e620c5a0c577af130f0a918bf40dfc4360c693bd8e95e8f44cc50107a92a235c",
+    "gold": "7b1fa84573b504327d3cafb95f3293f9a981b90bc51d93f89ed3cee3cfde5d94"
+  }
+}

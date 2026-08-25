@@ -1,0 +1,34 @@
+{
+  "thresholds": {
+    "s_sem": {
+      "negative": 0.05533433603944769,
+      "positive": 0.0937886770698668
+    },
+    "s_skill": {
+      "negative": 0.0,
+      "positive": 0.3333333333333333
+    },
+    "s_exp": {
+      "negative": 0.006737946999085467,
+      "positive": 1.0
+    }
+  },
+  "label_model": {
+    "prior": 0.05,
+    "lf_columns": [
+      "lf_sem",
+      "lf_skill",
+      "lf_exp"
+    ],
+    "sensitivities": [
+      0.99,
+      0.51,
+      0.99
+    ],
+    "specificities": [
+      0.5150038540052331,
+      0.99,
+      0.51
+    ]
+  }
+}

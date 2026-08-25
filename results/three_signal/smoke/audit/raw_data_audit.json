@@ -1,0 +1,12 @@
+{
+  "jobs_raw_rows": 14634,
+  "jobs_columns": 19,
+  "jobs_unique": 14634,
+  "jobs_exact_duplicates": 0,
+  "jobs_missing_cells": 0,
+  "candidates_raw_rows": 3983,
+  "candidates_columns": 14,
+  "candidates_unique": 3191,
+  "candidates_exact_duplicates": 792,
+  "candidates_missing_cells": 0
+}

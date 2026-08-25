@@ -1,0 +1,23 @@
+{
+  "protocol": "query-disjoint-gold-4-validation-8-test-label-blind-v2",
+  "split_algorithm": "sorted-job-id-seeded-shuffle-v1",
+  "seed": 42,
+  "validation_jobs": [
+    "JOB_01",
+    "JOB_52",
+    "JOB_60",
+    "JOB_71"
+  ],
+  "test_jobs": [
+    "JOB_02",
+    "JOB_14",
+    "JOB_20",
+    "JOB_21",
+    "JOB_23",
+    "JOB_29",
+    "JOB_51",
+    "JOB_74"
+  ],
+  "validation_pairs": 32,
+  "test_pairs": 68
+}

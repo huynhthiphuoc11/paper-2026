@@ -1,0 +1,78 @@
+protocol_version: three-signal-cuda-tie-aware-lf-2026-08-25
+data_dir: data
+gold_path: data/gold/human_validated_benchmark_graded_0_3.csv
+output_dir: results/three_signal
+seed: 42
+seeds: [11, 23, 42, 67, 89]
+
+sample:
+  n_jobs: 2000
+  n_candidates: 1500
+  candidates_per_job: 200
+
+split:
+  train_ratio: 0.70
+  validation_ratio: 0.15
+  seed: 42
+
+gold:
+  validation_jobs: 4
+  split_seed: 42
+  independent_annotations_path: null
+  relevance_column: relevance
+  binary_threshold: 2
+  k_values: [5, 10]
+
+features:
+  semantic_model_name: sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2
+  semantic_batch_size: 64
+  semantic_max_features: 12000
+  role_max_features: 4000
+
+weak_supervision:
+  threshold_policy: negative-global-positive-tail-v1
+  negative_percentile: 25
+  positive_percentile: 75
+  max_abs_spearman: 0.70
+  posterior_threshold: 0.50
+  label_model:
+    n_iter: 100
+    parameter_clip: [0.51, 0.99]
+    prior_clip: [0.05, 0.95]
+    initial_accuracy: 0.75
+    convergence_tolerance: 0.0000001
+
+models:
+  device: cuda
+  learning_rates: [0.001, 0.01]
+  batch_sizes:
+    pointwise: [128, 256]
+    pairwise: [128, 256]
+    listwise: [4, 8]
+  max_epochs: 150
+  patience: 15
+  pair_delta: 0.02
+  max_pairs_per_job: 150
+  listwise_temperature: 1.0
+  listwise_logit_epsilon: 0.0001
+  weight_decay: 0.0001
+  gradient_clip_norm: 5.0
+  formulation_tie_tolerance: 0.005
+
+bootstrap:
+  n_resamples: 5000
+  seed: 42
+
+smoke:
+  n_jobs: 36
+  n_candidates: 80
+  candidates_per_job: 30
+  seeds: [42]
+  learning_rates: [0.01]
+  batch_sizes:
+    pointwise: [128]
+    pairwise: [128]
+    listwise: [2]
+  max_epochs: 8
+  patience: 3
+  n_resamples: 200

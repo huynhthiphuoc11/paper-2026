@@ -1,0 +1,13 @@
+{
+  "status": "INVALID_FOR_CONFIRMATORY_USE",
+  "effective_date": "2026-08-24",
+  "reason": "The prior Gold 4/8 split policy used relevance grades while choosing validation jobs.",
+  "affected_split_manifest": "data/splits/gold_split_manifest.json",
+  "affected_artifacts": [
+    "results/three_signal/full/",
+    "results/three_signal/smoke/"
+  ],
+  "preservation_policy": "Existing files are retained unchanged for provenance and must not be deleted or overwritten.",
+  "replacement_policy": "sorted-job-id-seeded-shuffle-v1",
+  "replacement_manifest": "data/splits/gold_split_manifest_label_blind_v2.json"
+}

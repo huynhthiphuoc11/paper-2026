@@ -1,0 +1,4 @@
+seed,formulation,learning_rate,batch_size,best_epoch,best_validation_loss,stopped_early,train_pair_hash,validation_pair_hash
+42,pointwise,0.01,128,8,0.6409948468208313,False,,
+42,pairwise,0.01,128,8,0.4431973397731781,False,c9c2258acde5bc99c3a5aa52caec6c41fcd207308208319d5e3d956e60045530,531cf50bbb21d6a18f2d9c3c4c652c5bf3469aec6c723b96c0fe3ac4f3f005f5
+42,listwise,0.01,128,6,3.4011070728302,False,,
